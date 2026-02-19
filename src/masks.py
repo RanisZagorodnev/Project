@@ -1,5 +1,5 @@
 def get_mask_card_number(card_number: str) -> str:
-    """ "Маскирует номер карты, скрывая средние цифры."""
+    """ Маскирует номер карты, скрывая средние цифры."""
     card_number = str(card_number)
     block_1 = card_number[:4]
     block_2 = card_number[4:6] + "**"
@@ -10,7 +10,7 @@ def get_mask_card_number(card_number: str) -> str:
 
 
 def get_mask_account(account_number: str) -> str:
-    """ "Маскирует номер банковского счёта, оставляя только последние 4 цифры."""
+    """ Маскирует номер банковского счёта, оставляя только последние 4 цифры."""
     account_number = str(account_number)
     block_1 = account_number[-4:]
 
