@@ -17,10 +17,9 @@ def get_mask_account(account_number: str) -> str:
     return "**" + block_1
 
 
-result = get_mask_card_number(card_number="2689764563647584")
-print(result)
-
-result = get_mask_account(account_number="73654108430135874305")
-print(result)
-
+# result = get_mask_card_number(card_number="2689764563647584")
+# print(result)
+#
+# result = get_mask_account(account_number="73654108430135874305")
+# print(result)
 
