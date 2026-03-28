@@ -1,12 +1,16 @@
-from masks import get_mask_card_number, get_mask_account
+from src.masks import get_mask_card_number, get_mask_account
 
 
 def mask_account_card(text: str) -> str:
-    """
-    Принимает строку с типом и номером карты или счета
-    и возвращает строку с замаскированным номером.
-    """
-    *names, number = text.split()
+    if not text:
+        return ""
+
+    parts = text.split()
+    if len(parts) < 2:
+        return text
+
+    *names, number = parts
+
     if len(number) == 20:
         return f"Счет {get_mask_account(number)}"
 
@@ -14,15 +18,9 @@ def mask_account_card(text: str) -> str:
 
 
 def get_date(date: str) -> str:
-    """
-    Принимает строку с датой в формате YYYY-MM-DD...
-    и возвращает дату в формате DD.MM.YYYY.
-    """
+    if not date:
+        return ""
+
     year, month, day = date[:10].split("-")
     return f"{day}.{month}.{year}"
 
-print(get_date("2026-03-11T02:26:18.671407"))
-
-print(mask_account_card("Visa Platinum 7000792289606361"))
-print(mask_account_card("Maestro 7000792289606361"))
-print(mask_account_card("Счет 73654108430135874305"))
