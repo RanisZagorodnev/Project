@@ -11,10 +11,14 @@ def mask_account_card(text: str) -> str:
 
     *names, number = parts
 
-    if len(number) == 20:
+    if len(number) == 20:  # Для счетов
         return f"Счет {get_mask_account(number)}"
 
-    return " ".join(names) + " " + get_mask_card_number(number)
+    if len(number) == 16:  # Для карт
+        return " ".join(names) + " " + get_mask_card_number(number)
+
+    # Если длина не совпала ни с картой, ни со счетом — возвращаем как есть
+    return text
 
 
 def get_date(date: str) -> str:
