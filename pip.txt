@@ -1,0 +1,6 @@
+python -m ensurepip --upgrade; python -m pip install --upgrade pip; python -m pip install pytest
+
+
+python -m ensurepip --upgrade — проверяет наличие pip и устанавливает его, если его нет.
+python -m pip install --upgrade pip — обновляет pip до последней версии.
+python -m pip install pytest — устанавливает pytest.
