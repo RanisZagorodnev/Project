@@ -37,7 +37,7 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 # Unit test / coverage reports
-htmlcov/
+# The HTML coverage report is versioned so it can be reviewed on GitHub.
 .tox/
 .nox/
 .coverage
